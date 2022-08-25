@@ -24,9 +24,11 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-q>", ":wq!<CR>", opts) --quit
+keymap("n", "<C-q>", ":wq!<CR>", opts) --quitkeymap
+keymap("n", "<C-s>", ":lua vim.lsp.buf.formatting_sync()<CR>", opts) --format on save
 keymap("n", "<C-s>", ":w!<CR>", opts) --save
-keymap("n", "<leader>e", ":Lex 40<cr>", opts)
+--toggle nvim tree 
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -41,10 +43,16 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
 
+--toggle telescope
+keymap("n", "<C-f>", ":Telescope<CR>", opts)
+
+
+-- Insert --
+-- Press jk fast to exit insert mode
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
+keymap("i", "<C-s>", "<ESC>:w!<CR>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -61,5 +69,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
-
