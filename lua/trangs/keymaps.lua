@@ -24,10 +24,10 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-q>", ":wq!<CR>", opts) --quitkeymap
-keymap("n", "<C-s>", ":lua vim.lsp.buf.formatting_sync()<CR>", opts) --format on save
-keymap("n", "<C-s>", ":w!<CR>", opts) --save
---toggle nvim tree 
+keymap("n", "<C-q>", ":q!<CR>", opts) --quitkeymap
+keymap("n", "<C-x>", ":lua vim.lsp.buf.formatting_sync()<CR>", opts) --format
+--toggle nvim tree
+keymap("n", "<C-s>", ":w!<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
